@@ -116,9 +116,9 @@
     border-bottom: 1px solid var(--line);
   }
   .nav-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 16px 24px;
+    max-width: 100%;
+    margin: 0;
+    padding: 16px clamp(24px, 4vw, 64px);
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -133,27 +133,14 @@
     color: var(--ink);
   }
   .nav-links { display: flex; gap: 20px; }
-  .nav-links a {
-    position: relative;
-    font-size: 13.5px;
-    text-decoration: none;
-    color: var(--ink-soft);
-    padding-bottom: 3px;
-    transition: color 0.2s ease;
-  }
-  .nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 100%;
-    bottom: 0;
-    height: 1px;
-    background: var(--accent);
-    transition: right 0.25s cubic-bezier(.4,0,.2,1);
-  }
-  .nav-links a:hover, .nav-links a.active { color: var(--ink); }
-  .nav-links a:hover::after, .nav-links a.active::after { right: 0; }
 
-  main { max-width: 720px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+  main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 clamp(24px, 4vw, 64px);
+    position: relative;
+    z-index: 2;
+  }
 
   /* Hero */
   .hero {
@@ -533,16 +520,14 @@
 </main>
 
 <footer id="contact" class="reveal">
-  <div style="padding: 0 24px; max-width: 720px; margin: 0 auto;">
-    <p class="label" style="margin-bottom: 10px;">Get in touch</p>
-    <p>Open to product roles with real AI/ML surface area — the kind where I get to sit close to the model as well as the roadmap.</p>
-    <div class="contact-links">
-      <a href="mailto:saumyalohani01@gmail.com">saumyalohani01@gmail.com</a>
-      <a href="https://linkedin.com/in/saumyalohani/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/SaumyaLohani" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <p class="foot-note">Bangalore, Karnataka</p>
+  <p class="label" style="margin-bottom: 10px;">Get in touch</p>
+  <p>Open to product roles with real AI/ML surface area — the kind where I get to sit close to the model as well as the roadmap.</p>
+  <div class="contact-links">
+    <a href="mailto:saumyalohani01@gmail.com">saumyalohani01@gmail.com</a>
+    <a href="https://linkedin.com/in/saumyalohani/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/SaumyaLohani" target="_blank" rel="noopener">GitHub</a>
   </div>
+  <p class="foot-note">Bangalore, Karnataka</p>
 </footer>
 
 <script>
